@@ -51,20 +51,20 @@
       <div class="content">
         <div class="content-item">
           <span class="label">发票代码</span>
-          <span class="code value">150002422060</span>
+          <span class="code value"></span>
         </div>
         <div class="content-item">
           <span class="label">发票号码</span>
-          <span class="num value">00341118</span>
+          <span class="num value"></span>
         </div>
         <div class="content-item">
           <span class="label">合计金额</span>
-          <div class="money"><span>¥233073</span></div>
+          <div class="money">¥<span class="money-value"></span></div>
           (不含税)
         </div>
         <div class="content-item">
           <span class="label">开票日期</span>
-          <span class="date value">2024.11.26</span>
+          <span class="date value"></span>
         </div>
       </div>
     </div>
@@ -94,7 +94,7 @@
     if (code && num && money && date) {
       setDomValue('code', code)
       setDomValue('num', num)
-      setDomValue('money', money)
+      setDomValue('money-value', money)
       setDomValue('date', date)
     }
   </script>
