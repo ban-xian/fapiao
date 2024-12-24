@@ -1,9 +1,8 @@
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title> </title>
+    <title>发票信息</title>
   </head>
   <style>
     html,
@@ -23,10 +22,12 @@
       font-size: 6.4vw;
     }
     .title-container .title-tips {
+      font-size: 4.8vw;
       line-height: 6.4vw;
     }
     .content .content-item {
-      margin-bottom: 5.333vw;
+      margin-bottom: 4.267vw;
+      font-size: 3.733vw;
     }
     .content .label {
       margin-right: 20vw;
@@ -42,21 +43,50 @@
       <div class="content">
         <div class="content-item">
           <span class="label">发票代码</span>
-          <span>150002422060</span>
+          <span class="code">150002422060</span>
         </div>
         <div class="content-item">
           <span class="label">发票号码</span>
-          <span>00341118</span>
+          <span class="num">00341118</span>
         </div>
         <div class="content-item">
           <span class="label">合计金额</span>
-          <span>¥267900(不含税)</span>
+          ¥<span class="money">233073</span>(不含税)
         </div>
         <div class="content-item">
           <span class="label">开票日期</span>
-          <span>2024.11.26</span>
+          <span class="date">2024.11.26</span>
         </div>
       </div>
     </div>
   </body>
+  <script>
+    const getUrlParam = (path) => {
+      const url = path || window.location.href
+      const p = url.split('?')[1]
+      if (!p) return {}
+      const keyValue = p.split('&')
+      const obj = {}
+      for (let i = 0; i < keyValue.length; i++) {
+        const item = keyValue[i].split('=')
+        const key = item[0]
+        const value = item[1]
+        obj[key] = value
+      }
+      return obj
+    }
+
+    const setDomValue = (className, value) => {
+      const dom = document.querySelector(`.${className}`)
+      dom.innerHTML = value
+    }
+
+    const { code, num, money, date } = getUrlParam()
+    if (code && num && money && date) {
+      setDomValue('code', code)
+      setDomValue('num', num)
+      setDomValue('money', money)
+      setDomValue('date', date)
+    }
+  </script>
 </html>
