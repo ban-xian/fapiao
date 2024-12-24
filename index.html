@@ -27,11 +27,19 @@
     }
     .content .content-item {
       margin-bottom: 4.267vw;
+      display: flex;
+      align-items: center;
       font-size: 3.733vw;
     }
     .content .label {
       margin-right: 20vw;
       color: #848484;
+    }
+    .content .value {
+      opacity: 0.8;
+    }
+    .content .money {
+      font-weight: 500;
     }
   </style>
   <body>
@@ -43,19 +51,20 @@
       <div class="content">
         <div class="content-item">
           <span class="label">发票代码</span>
-          <span class="code">150002422060</span>
+          <span class="code value">150002422060</span>
         </div>
         <div class="content-item">
           <span class="label">发票号码</span>
-          <span class="num">00341118</span>
+          <span class="num value">00341118</span>
         </div>
         <div class="content-item">
           <span class="label">合计金额</span>
-          ¥<span class="money">233073</span>(不含税)
+          <div class="money">¥<span>233073</span></div>
+          (不含税)
         </div>
         <div class="content-item">
           <span class="label">开票日期</span>
-          <span class="date">2024.11.26</span>
+          <span class="date value">2024.11.26</span>
         </div>
       </div>
     </div>
